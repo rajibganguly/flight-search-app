@@ -1,0 +1,19 @@
+<div>
+  <label>Flight Type:</label>
+  <select [(ngModel)]="flightType">
+    <option value="one-way">One-way</option>
+    <option value="return">Return</option>
+  </select>
+
+  <label>Origin:</label>
+  <select [(ngModel)]="origin">
+    <option *ngFor="let airport of airports" [value]="airport.code">{{ airport.name }}</option>
+  </select>
+
+  <label>Destination:</label>
+  <select [(ngModel)]="destination">
+    <option *ngFor="let airport of airports" [value]="airport.code">{{ airport.name }}</option>
+  </select>
+
+  <button (click)="search()">Search</button>
+</div>
